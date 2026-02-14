@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abrar Al-Koli | Web Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= Root Colors ================= */
+:root {
+  --burgundy: #6a0d0d;
+  --mauve: #b76e79;
+  --light-bg: #faf7f7;
+  --soft-pink: #e6c9c9;
+  --dark-text: #2b2b2b;
+  --white: #ffffff;
+}
+
+/* ================= Reset ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--light-bg);
+  color: var(--dark-text);
+  line-height: 1.8;
+}
+
+/* ================= Navbar ================= */
+header {
+  position: fixed;
+  width: 100%;
+  background: var(--white);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+header h2 {
+  color: var(--burgundy);
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+ color: var(--white);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+   color: var(--soft-pink);
+}
+
+/* ================= Hero ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 10%;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: var(--burgundy);
+}
+
+.hero-text h3 {
+  font-weight: 400;
+  margin: 10px 0 20px;
+  color: var(--mauve);
+}
+
+.hero-text p {
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+
+.buttons a {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.primary {
+  background: var(--burgundy);
+  color: white;
+}
+
+.primary:hover {
+  background: #500909;
+}
+
+.outline {
+  border: 2px solid var(--mauve);
+  color: var(--mauve);
+}
+
+.outline:hover {
+  background: var(--mauve);
+  color: white;
+}
+
+/* ================= Hero Image ================= */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 320px;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* ================= Sections ================= */
+section {
+  padding: 100px 10%;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--burgundy);
+  font-size: 2rem;
+}
+
+/* ================= Cards ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s;
+  border-top: 4px solid var(--mauve);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: var(--burgundy);
+}
+
+/* ================= Social ================= */
+.social {
+  text-align: center;
+}
+
+.social a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  border: 2px solid var(--mauve);
+  color: var(--mauve);
+  transition: 0.3s;
+}
+
+.social a:hover {
+  background: var(--mauve);
+  color: white;
+}
+
+/* ================= CTA ================= */
+.cta {
+  background: var(--burgundy);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* ================= Footer ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--white);
+  font-size: 0.9rem;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 220px;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: var(--burgundy);
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* عشان الصفحة ما تدخل تحت البار */
+body {
+  padding-top: 80px;
+}
+
+
+.logo {
+ color: var(--white);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--burgundy);
+}
+
+
+@media (max-width: 768px) {
+
+  nav {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: var(--burgundy);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 10px 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  nav a:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+  /* Hero Improvements */
+  .hero {
+    padding: 100px 5% 50px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons stack */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Image smaller */
+  .hero-image img {
+    width: 200px;
+  }
+
+  section {
+    padding: 70px 5%;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<header>
+  <h2 class="logo">Abrar</h2>
+
+  <nav id="nav">
+    <a href="#about">من أنا</a>
+    <a href="#services">الخدمات</a>
+    <a href="#portfolio">الأعمال</a>
+    <a href="#contact">تواصل</a>
+  </nav>
+
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+</header>
+
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-text">
+<h1>Abrar </h1>
+<h3>Web Developer & Content Creator</h3>
+<p>أبني تجارب رقمية أنيقة وأشارك المعرفة التقنية بشغف.</p>
+<div class="buttons">
+<a href="#portfolio" class="primary">استعرض أعمالي</a>
+<a href="#contact" class="outline">احجز استشارة</a>
+</div>
+</div>
+
+<div class="hero-image">
+<img src="profile.jpg" alt="Abrar">
+</div>
+</section>
+
+<!-- About -->
+<section id="about">
+<h2>من أنا</h2>
+<p style="text-align:center; max-width:700px; margin:auto;">
+مطورة ويب وصانعة محتوى تقني، أؤمن أن البرمجة ليست مجرد كود بل هوية وتجربة.
+أساعد المشاريع تبني حضور رقمي راقي يعكس قيمتها الحقيقية.
+</p>
+</section>
+
+<!-- Services -->
+<section id="services">
+<h2>الخدمات</h2>
+<div class="grid">
+<div class="card">
+<h3>تصميم مواقع</h3>
+<p>مواقع تعريفية احترافية وتجربة مستخدم أنيقة.</p>
+</div>
+<div class="card">
+<h3>تطوير واجهات</h3>
+<p>HTML / CSS / JavaScript بأداء سريع وتصميم عصري.</p>
+</div>
+<div class="card">
+<h3>تعليم البرمجة</h3>
+<p>تبسيط المفاهيم للمبتدئين بأسلوب راقي وواضح.</p>
+</div>
+</div>
+</section>
+
+<!-- Portfolio -->
+<section id="portfolio">
+<h2>أعمالي</h2>
+
+<div class="card" style="max-width:600px; margin:auto; text-align:center;">
+  <h3>مشاريعي البرمجية</h3>
+  <p>
+    جميع أعمالي ومشاريعي البرمجية متاحة على حسابي في GitHub،
+    حيث أشارك أكواد نظيفة، مشاريع تدريبية، وأفكار قابلة للتطوير.
+  </p>
+
+  <br>
+
+  <a href="https://github.com/Abrar-moh-k" target="_blank" class="primary">
+    زيارة حساب GitHub
+  </a>
+</div>
+
+</section>
+
+
+<!-- Social -->
+<section>
+<h2>تابعيني</h2>
+<div class="social">
+<a href="https://www.instagram.com/abrar_coding" target="_blank">Instagram</a>
+<a href="https://github.com/Abrar-moh-k" target="_blank">GitHub</a>
+<a href="https://www.youtube.com/@abrar_moh_k" target="_blank">YouTube</a>
+<a href="https://www.tiktok.com/@abrar_moh_k" target="_blank">TikTok</a>
+<a href="https://www.facebook.com" target="_blank">Facebook</a>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2>لنصنع تجربة رقمية تليق بعلامتك</h2>
+<a href="#contact" class="primary">ابدئي مشروعك الآن</a>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<h2>تواصل معي</h2>
+<form action="https://formspree.io/f/xkorarbk" method="POST" style="max-width:500px;margin:auto;">
+<input type="text" name="name" placeholder="اسمك" required style="width:100%;padding:12px;margin-bottom:15px;border-radius:10px;border:1px solid #ddd;">
+<input type="email" name="email" placeholder="بريدك" required style="width:100%;padding:12px;margin-bottom:15px;border-radius:10px;border:1px solid #ddd;">
+<textarea name="message" rows="5" placeholder="رسالتك" required style="width:100%;padding:12px;margin-bottom:15px;border-radius:10px;border:1px solid #ddd;"></textarea>
+<button type="submit" class="primary">إرسال</button>
+</form>
+</section>
+
+<footer>
+© 2026 Abrar  — All Rights Reserved
+</footer>
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+
+</body>
+</html>
